@@ -7,20 +7,7 @@
     %link{:href => "style.css", :rel => "stylesheet"}/
   %body
     .wrapper
-      .chat-side
-        .chat-head
-          .side-head__box1
-            %p.side-head__box1__user-name 久野　由貴
-            %ul.side-head__box1__menu
-              = link_to "", class: "side-head__box1__menu__edit-user" do
-                = fa_icon 'pencil-square-o'
-              = link_to "", class: "side-head__box1__menu__edit-user" do
-                = fa_icon 'cog'  
-        .chat-groups
-          %a{:href => "/groups/3335/messages"}
-            .group
-              %p.group__group-name あいう
-              %p.group__last-message う
+      = render partial:"/layouts/shared/side_bar"
       .chat-main
         .main-head
           .main-head__left-box
