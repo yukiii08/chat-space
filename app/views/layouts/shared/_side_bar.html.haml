@@ -4,9 +4,9 @@
       %p.side-head__box1__user-name
         = current_user.name
       %ul.side-head__box1__menu
-        = link_to "groups/new", class: "side-head__box1__menu__edit-user" do
+        = link_to new_group_path, class: "side-head__box1__menu__edit-user" do
           = fa_icon 'pencil-square-o'
-        = link_to "users/edit", class: "side-head__box1__menu__edit-user" do
+        = link_to edit_user_path(current_user), class: "side-head__box1__menu__edit-user" do
           = fa_icon 'cog'  
   .chat-groups
     - current_user.groups.each do |group|

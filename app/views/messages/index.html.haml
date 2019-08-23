@@ -1,44 +1,22 @@
-!!!
-%html
-  %head
-    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
-    %meta{:charset => "utf-8"}/
-    %title
-    %link{:href => "style.css", :rel => "stylesheet"}/
-  %body
-    .wrapper
-      = render partial:"/layouts/shared/side_bar"
-      .chat-main
-        .main-head
-          .main-head__left-box
-            %h2.main-head__left-box__current-group{"data-group_id" => "3335"} あいう
-            %ul.main-head__left-box__member-list
-              Member：
-              %li.main-header__left-box__member-list__member 久野　由貴
-          %a{:href => "/groups/3335/edit"}
-            .main-head__edit-btn Edit
-        .messages
-          .message{"data-message_id" => "8721"}
-            .message__upper-info
-              %p.message__upper-info__talker 久野 由貴
-              %p.message__upper-info__date 2019/08/14(Wed) 21:37:11
-            %p.message__text あ
-          .message{"data-message_id" => "8722"}
-            .message__upper-info
-              %p.message__upper-info__talker 久野 由貴
-              %p.message__upper-info__date 2019/08/14(Wed) 21:37:22
-            %p.message__text い
-          .message{"data-message_id" => "8723"}
-            .message__upper-info
-              %p.message__upper-info__talker 久野 由貴
-              %p.message__upper-info__date 2019/08/14(Wed) 21:37:33
-            %p.message__text う
-        .form
-          %form#new_message.new_message{"accept-charset" => "UTF-8", :action => "/groups/3335/messages", :enctype => "multipart/form-data", :method => "post"}
-            .box3
-              .input-box
-                %input#message_content.input-box__text{:name => "message[content]", :placeholder => "type a message", :type => "text"}/
-                %label.input-box__image{:for => "message_image"}
-                  %i.fa.fa-image.fa-lg
-                  %input#message_image.input-box__image__file{:name => "message[image]", :type => "file"}/
-                %input.submit-btn{"data-disable-with" => "Send", :name => "commit", :type => "submit", :value => "Send"}/
+.wrapper
+  = render partial:"/layouts/shared/side_bar"
+  .chat-main
+    .main-head
+      .main-head__left-box
+        %h2.main-head__left-box__current-group{"data-group_id" => "3335"} あいう
+        %ul.main-head__left-box__member-list
+          Member：
+          %li.main-header__left-box__member-list__member abc
+      = link_to 'Edit', edit_group_path(@group), class: 'main-head__edit-btn'
+        
+    .messages
+      = render @messages
+    .form
+      = form_for [@group, @message] do |f| 
+        .box3       
+        .input-box
+          = f.text_field :content, id: 'message_content', class: 'input-box__text', name: "message[content]", placeholder: "type a message"
+          = f.label :image, class: 'input-box__image', for: "message_image" do
+            = fa_icon "image"
+            = f.file_field :image, id: 'message_image', class: 'input-box__image__file', name: "message[image]"
+          = f.submit 'Send', class: 'submit-btn'

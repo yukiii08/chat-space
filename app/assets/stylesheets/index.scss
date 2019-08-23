@@ -16,6 +16,7 @@ html, body {
   height: 100vh;
   color: white;
   box-sizing: border-box;
+  font-size: 13px;
   }
 
 .chat-head {
@@ -37,9 +38,15 @@ html, body {
       box-sizing: border-box;
       &__user-name {
         width: 260px;
+        font-size: 18px;
       }
       &__menu {
         display: flex;
+        font-size: 16px;
+        &__edit-user{
+          margin-left: 2px;
+        }
+
       }  
 }
 
@@ -48,6 +55,7 @@ html, body {
 .chat-side a {
   color: white;
   text-decoration: none;
+
 }
 
 .chat-groups {
@@ -62,12 +70,12 @@ html, body {
 .group {
   width: 260px;
   height: 45px;
-
+  padding-bottom: 40px;
   &__p {
     &.group__group-name {
-      font-size: 15px;
       width: 300px;
       height: 24px;
+      font-size: 15px;
       margin-bottom: 5px;
     }
     &.group__last-message {
@@ -139,6 +147,7 @@ html, body {
   background-color: #fafafa;
   padding: 46px 40px;
   box-sizing: border-box;
+  overflow: scroll;
 }
 
 .message {
@@ -157,12 +166,14 @@ html, body {
       font-size: 16px;
       font-weight: bold;
       margin: 0;
+    }
     &__date {
       width: 166.98px;
       height: 24px;
       color: #999999;
       font-size: 12px;
       margin: 0 0 0 10px;
+    }
     &__text {
       width: 819px;
       height: 21px;
@@ -170,8 +181,8 @@ html, body {
       font-size: 14px;
       margin: 0 0 10px;
     }
-    }
-    }
+    
+    
   }
 }
 
@@ -211,8 +222,8 @@ html, body {
     font: normal normal normal 14px/1 FontAwesome;
     font-size: inherit;
     text-rendering: auto;
-    position: absolute;
-    right: 125px;
+    position: relative;
+    right: 25px;
     top: 18px;
     &__file {
       display: none;
