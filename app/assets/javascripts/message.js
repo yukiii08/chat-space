@@ -1,10 +1,7 @@
 $(function(){
 
   function buildPost(message){
-    var img = ""
-    if (message.image !== null) {
-        img = `<img src="${message.image}">`
-    }
+    image = (message.image) ? `<img class= "lower-message__image" src=${ message.image } >` : "";
     var html = `<div class="message">
                   <div class="message__upper-info">
                     <div class="message__upper-info__talker">
@@ -19,7 +16,7 @@ $(function(){
                       ${message.content}
                     </div>
                   </div>
-                    ${img}
+                  ${image}
                   
                 </div>`
       return html;
@@ -30,7 +27,6 @@ $(function(){
     e.preventDefault();
     var formData = new FormData(this);
     var url = $(this).attr('action');
-    console.log(url)
 
     $.ajax({
       url: url,
