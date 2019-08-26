@@ -152,7 +152,6 @@ html, body {
 
 .message {
   width: 819px;
-  height: 65px;
   padding: 0 0 40px;
   &__upper-info {
     width: 819px;
@@ -181,9 +180,15 @@ html, body {
       font-size: 14px;
       margin: 0 0 10px;
     }
-    
-    
   }
+}
+
+.message__text{
+  width: 819px;
+  height: 21px;
+  color: #434a54;
+  font-size: 14px;
+  margin: 0 0 10px;
 }
 
 .new_message.new_message {
