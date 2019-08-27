@@ -28,18 +28,15 @@
       = f.label 'チャットメンバー', class: 'chat-group-form__label'
     .chat-group-form__field--right
       .chat-group-user.clearfix
-        %input(name="group[user_ids][]" type="hidden" value="#{current_user.id}")
-        %p.chat-group-user__name
-          =current_user.name
-      - group.group_users.each do |group_user|
-        - if group_user.user != current_user
+        - group.group_users.each do |group_user|
           .chat-group-users.js-add-user
             .chat-group-user.clearfix.js-chat-member
               %input(name="group[user_ids][]" type="hidden" value="#{group_user.user.id}")
               %p.chat-group-user__name
                 = group_user.user.name
-              .user-search-remove.chat-group-user__btn.chat-group-user__btn--remove.js-remove-btn 削除
-              
+              - if group_user.user.id != current_user.id
+                .user-search-remove.chat-group-user__btn.chat-group-user__btn--remove.js-remove-btn 削除
+            
   .chat-group-form__field
     .chat-group-form__field--left
     .chat-group-form__field--right

@@ -21,7 +21,7 @@ $(function() {
     <p class='chat-group-user__name'>${name}</p>
     <div class='user-search-remove chat-group-user__btn chat-group-user__btn--remove js-remove-btn'>削除</div>
   </div>`
-  $(".js-chat-member").append(html)
+  $(".chat-group-users").append(html)
   }
 
   function deli_member(name){
@@ -32,7 +32,6 @@ $(function() {
 
   $("#user-search-field").on("keyup", function() {
     var input = $("#user-search-field").val();
-    console.log("input:" + input);
     $.ajax({
      
       type: 'GET',
@@ -44,7 +43,6 @@ $(function() {
       $('#user-search-result').empty();
         if (users.length !== 0) {
           users.forEach(function(user){
-            console.log(user);
             appendUser(user);
           });
         }
@@ -58,8 +56,8 @@ $(function() {
   });
 
   $(document).on('click',".chat-group-user__btn--add", function(){
-    var name = $(this).attr("data-user-name")
-    var id = $(this).attr("data-user-id")
+    var name = $(this).data('user-name')
+    var id = $(this).data('user-id')
     $(this).parent().remove()
     add_menber(name,id)
 
