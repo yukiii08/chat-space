@@ -102,7 +102,6 @@ html, body {
   display: flex;
   &__left-box {
     margin: 35px 0px 0px;
-    width: 121.55px;
     height: 64px;
     box-sizing: border-box;
     &__current-group {
@@ -120,9 +119,10 @@ html, body {
     list-style: none;
     padding: 0;
     margin: 0;
-      &__member {
+      li {
       width: 60px;
       height: 18px;
+      margin-left: 5px;
       }
     }
   }
