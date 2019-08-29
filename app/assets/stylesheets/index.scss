@@ -102,7 +102,6 @@ html, body {
   display: flex;
   &__left-box {
     margin: 35px 0px 0px;
-    width: 121.55px;
     height: 64px;
     box-sizing: border-box;
     &__current-group {
@@ -120,9 +119,10 @@ html, body {
     list-style: none;
     padding: 0;
     margin: 0;
-      &__member {
+      li {
       width: 60px;
       height: 18px;
+      margin-left: 5px;
       }
     }
   }
@@ -152,7 +152,6 @@ html, body {
 
 .message {
   width: 819px;
-  height: 65px;
   padding: 0 0 40px;
   &__upper-info {
     width: 819px;
@@ -181,9 +180,15 @@ html, body {
       font-size: 14px;
       margin: 0 0 10px;
     }
-    
-    
   }
+}
+
+.message__text{
+  width: 819px;
+  height: 21px;
+  color: #434a54;
+  font-size: 14px;
+  margin: 0 0 10px;
 }
 
 .new_message.new_message {

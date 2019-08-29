@@ -1,4 +1,4 @@
-.message
+.message{"data-message-id": "#{message.id}"}
   .message__upper-info
     .message__upper-info__talker
       = message.user.name
@@ -8,9 +8,4 @@
     - if message.content.present?
       .message__text
         = message.content
-        
-    
-  
-
-
-        
+    = image_tag message.image, class: 'input-box__image' if message.image.present?
