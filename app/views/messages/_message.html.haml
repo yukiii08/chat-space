@@ -9,6 +9,5 @@
       .message__text
         = message.content
     -# = image_tag message.image, class: 'input-box__image' if message.image.present?
-    -# <img class="input-box__image" src="https://s3-ap-northeast-1.amazonaws.com/uploadtesttt/uploads/message/image/379/slime.png" alt="Slime">
     - if message.image.present?
       %img.input-box__image{src: message.image.url}
