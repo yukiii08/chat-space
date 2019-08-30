@@ -5,17 +5,16 @@
         = current_user.name
       %ul.side-head__box1__menu
         = link_to new_group_path, class: "side-head__box1__menu__edit-user" do
-          = fa_icon 'pencil-square-o'
+          = fa_icon 'pencil-square-o', class: 'pencil'
         = link_to edit_user_path(current_user), class: "side-head__box1__menu__edit-user" do
-          = fa_icon 'cog'  
+          = fa_icon 'cog', class: 'cog'
   .chat-groups
     - current_user.groups.each do |group|
       %a{:href => "/groups/#{group.id}/messages"}
         .group
-          %p.group__group-name 
+          %p.group__group-name
             = group.name
           %p.show_last_message
             = group.show_last_message
-            
 
 

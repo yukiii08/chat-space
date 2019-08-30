@@ -38,16 +38,23 @@ html, body {
       box-sizing: border-box;
       &__user-name {
         width: 260px;
-        font-size: 18px;
+        font-size: 16px;
       }
       &__menu {
         display: flex;
-        font-size: 16px;
+        font-size: 5px;
         &__edit-user{
-          margin-left: 2px;
+          margin-left: 5px;
+          .pencil{
+            font-size: 16px;
+          }
+          .cog{
+            font-size: 16px;
+          }
+
         }
 
-      }  
+      }
 }
 
 
@@ -72,20 +79,22 @@ html, body {
   height: 45px;
   padding-bottom: 40px;
   &__p {
-    &.group__group-name {
+    &__group-name {
       width: 300px;
       height: 24px;
       font-size: 15px;
       margin-bottom: 5px;
     }
-    &.group__last-message {
+    &__last-message {
       width: 260px;
       height: 17px;
       font-size: 11px;
     }
   }
 }
-
+.show_last_message{
+  font-size: 11px;
+}
 
 
 .chat-main {
@@ -127,7 +136,6 @@ html, body {
     }
   }
   &__edit-btn {
-    width: 40px;
     height: 40px;
     line-height: 40px;
     border: solid 1px #38aef0;
@@ -137,6 +145,7 @@ html, body {
     padding: 0 20px;
     position: absolute;
     right: 40px;
+    text-decoration: none;
   }
 }
 
@@ -207,9 +216,6 @@ html, body {
 }
 
 .input-box {
-  width: 100%;
-  height: 50px;
-  margin: 0;
   display: flex;
   &__text {
     width: 100%;
@@ -221,14 +227,14 @@ html, body {
     font-size: inherit;
     font-weight: inherit;
   }
-  
+
   &__image {
     display: inline-block;
     font: normal normal normal 14px/1 FontAwesome;
     font-size: inherit;
     text-rendering: auto;
     position: relative;
-    right: 25px;
+    right: 30px;
     top: 18px;
     &__file {
       display: none;
@@ -237,7 +243,7 @@ html, body {
       top: 10px;
       right: 10px;
       cursor: pointer;
-      }  
+    }
   }
 
 }
@@ -247,6 +253,11 @@ html, body {
   position: relative;
 }
 
+
+.fa{
+  font-size: 1.3rem;
+}
+
 .fa-fa-image {
   width: 22.28px;
   height: 21px;
@@ -254,20 +265,20 @@ html, body {
   right: 125px;
   top: 18px;
   padding-right: 0;
+  font-size: 1.3rem;
 }
+
 
 .submit-btn {
   width: 100px;
   height: 50px;
   background-color: #38aef0;
-  margin: 0px 0px 0px 15px;
   padding: 0px 30px;
   color: white;
   cursor: pointer;
   font-family: inherit;
   font-size: inherit;
   font-weight: inherit;
- 
 }
 
 input {
